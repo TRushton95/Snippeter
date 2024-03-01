@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wjsv7qaj7deh"
-path="res://.godot/imported/bin.png-eace2a82ba86a2b54aec303951282e0c.ctex"
+uid="uid://dcuyshtdml72f"
+path="res://.godot/imported/cross.png-5a04d4f74a14d109bdbf0e526d088c3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/snippeter/menu/listing/bin.png"
-dest_files=["res://.godot/imported/bin.png-eace2a82ba86a2b54aec303951282e0c.ctex"]
+source_file="res://menu/cross.png"
+dest_files=["res://.godot/imported/cross.png-5a04d4f74a14d109bdbf0e526d088c3a.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6wahcfd3hcf2"]
 
-[ext_resource type="PackedScene" uid="uid://dl5c8rsrpb8eo" path="res://addons/snippeter/menu/listing/listing.tscn" id="1_bax1t"]
-[ext_resource type="Script" path="res://addons/snippeter/menu/snippeter.gd" id="1_ubskj"]
-[ext_resource type="PackedScene" uid="uid://ce4322hiu7l6k" path="res://addons/snippeter/menu/editor/editor.tscn" id="3_x3iuu"]
+[ext_resource type="PackedScene" uid="uid://dl5c8rsrpb8eo" path="res://menu/listing/listing.tscn" id="1_bax1t"]
+[ext_resource type="Script" path="res://menu/snippeter.gd" id="1_ubskj"]
+[ext_resource type="PackedScene" uid="uid://ce4322hiu7l6k" path="res://menu/editor/editor.tscn" id="3_x3iuu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_seq1a"]
 bg_color = Color(0.278431, 0.278431, 0.278431, 1)

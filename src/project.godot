@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Plugins"
-run/main_scene="res://addons/snippeter/menu/snippeter.tscn"
+run/main_scene="res://menu/snippeter.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/snippeter/plugin.cfg")
+enabled=PackedStringArray()

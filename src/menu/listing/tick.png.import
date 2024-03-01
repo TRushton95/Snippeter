@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcuyshtdml72f"
-path="res://.godot/imported/cross.png-804c841c865d15221c84846aba886da2.ctex"
+uid="uid://uwfduxjef3fl"
+path="res://.godot/imported/tick.png-040ca8342e8ec21216c8d179366872d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/snippeter/menu/cross.png"
-dest_files=["res://.godot/imported/cross.png-804c841c865d15221c84846aba886da2.ctex"]
+source_file="res://menu/listing/tick.png"
+dest_files=["res://.godot/imported/tick.png-040ca8342e8ec21216c8d179366872d7.ctex"]
 
 [params]
 
