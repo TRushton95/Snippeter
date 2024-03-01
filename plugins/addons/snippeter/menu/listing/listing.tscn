@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl5c8rsrpb8eo"]
+
+[ext_resource type="Texture2D" uid="uid://wjsv7qaj7deh" path="res://addons/snippeter/menu/listing/bin.png" id="1_fsuy2"]
+[ext_resource type="Script" path="res://addons/snippeter/menu/listing/listing.gd" id="1_r2htv"]
+[ext_resource type="Texture2D" uid="uid://do35iqjk1ge6y" path="res://addons/snippeter/menu/listing/clipboard.png" id="2_i7cgq"]
+[ext_resource type="Texture2D" uid="uid://ryh1sbgiiryt" path="res://addons/snippeter/menu/listing/pencil.png" id="3_7s1qg"]
+[ext_resource type="Texture2D" uid="uid://uwfduxjef3fl" path="res://addons/snippeter/menu/listing/tick.png" id="5_yrwkl"]
+
+[sub_resource type="Animation" id="Animation_1qsod"]
+resource_name = "copy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/CopyButton:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_yrwkl"), ExtResource("2_i7cgq")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1k81p"]
+_data = {
+"copy": SubResource("Animation_1qsod")
+}
+
+[node name="Listing" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 32)
+offset_right = 388.0
+offset_bottom = 40.0
+script = ExtResource("1_r2htv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 100
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "snippet_name"
+vertical_alignment = 1
+
+[node name="ListingCopyButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="CopyButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+icon = ExtResource("2_i7cgq")
+
+[node name="EditButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+icon = ExtResource("3_7s1qg")
+
+[node name="DeleteButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+icon = ExtResource("1_fsuy2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1k81p")
+}
+
+[connection signal="mouse_entered" from="ListingCopyButton" to="." method="_on_listing_copy_button_mouse_entered"]
+[connection signal="mouse_exited" from="ListingCopyButton" to="." method="_on_listing_copy_button_mouse_exited"]
+[connection signal="pressed" from="ListingCopyButton" to="." method="_on_listing_copy_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CopyButton" to="." method="_on_copy_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]
