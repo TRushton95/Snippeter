@@ -72,6 +72,7 @@ theme_override_constants/separation = 5
 visible = false
 layout_mode = 2
 
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
 [connection signal="cancel_button_presssed" from="Editor" to="." method="_on_editor_cancel_button_presssed"]
 [connection signal="save_button_pressed" from="Editor" to="." method="_on_editor_save_button_pressed"]
