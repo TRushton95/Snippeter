@@ -1,5 +1,5 @@
 extends Object
-class_name Disk
+class_name Snippetter_Disk
 
 const SNIPPETS_DIR =  "res://addons/snippetter/snippets/"
 const FILE_FORMAT = "%s.txt"
@@ -22,8 +22,8 @@ static func read_snippet_data(name: String) -> String:
 	return file.get_as_text()
 
 
-static func read_all_snippets() -> Array[Snippet]:
-	var result = [] as Array[Snippet]
+static func read_all_snippets() -> Array[Snippetter_Snippet]:
+	var result = [] as Array[Snippetter_Snippet]
 	
 	if !DirAccess.dir_exists_absolute(SNIPPETS_DIR):
 		return result
@@ -32,7 +32,7 @@ static func read_all_snippets() -> Array[Snippet]:
 	
 	for filename in dir.get_files():
 		var file = FileAccess.open(SNIPPETS_DIR + filename, FileAccess.READ) as FileAccess
-		var snippet = Snippet.new(file.get_path().get_file().trim_suffix(".txt"), file.get_as_text())
+		var snippet = Snippetter_Snippet.new(file.get_path().get_file().trim_suffix(".txt"), file.get_as_text())
 		result.push_back(snippet)
 		
 	return result

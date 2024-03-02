@@ -1,13 +1,13 @@
 @tool
 extends PanelContainer
-class_name QuickSelect
+class_name Snippetter_QuickSelect
 
 @export var _option_scene : PackedScene
 
 @onready var _option_container : VBoxContainer = $VBoxContainer/PanelContainer/VBoxContainer
 @onready var _search_edit : LineEdit = $VBoxContainer/LineEdit
 
-var _snippets : Array[Snippet]
+var _snippets : Array[Snippetter_Snippet]
 
 
 func _on_line_edit_text_changed(text: String) -> void:
@@ -40,10 +40,10 @@ func _clear() -> void:
 
 
 func _load_snippets() -> void:
-	_snippets = Disk.read_all_snippets()
+	_snippets = Snippetter_Disk.read_all_snippets()
 
 
-func _push_snippets(snippets: Array[Snippet]):
+func _push_snippets(snippets: Array[Snippetter_Snippet]):
 	for snippet in snippets:
 		var option = _option_scene.instantiate()
 		_option_container.add_child(option)
@@ -51,8 +51,8 @@ func _push_snippets(snippets: Array[Snippet]):
 		option.selected.connect(_on_option_selected.bind(snippet.get_name(), snippet.get_data()))
 
 
-func _get_matching_snippets(search_string: String) -> Array[Snippet]:
-	var result = [] as  Array[Snippet]
+func _get_matching_snippets(search_string: String) -> Array[Snippetter_Snippet]:
+	var result = [] as  Array[Snippetter_Snippet]
 	
 	for snippet in _snippets:
 		if snippet.get_name().begins_with(search_string):

@@ -1,8 +1,8 @@
 @tool
 extends PanelContainer
-class_name Editor
+class_name Snippetter_Editor
 
-signal save_button_pressed(snippet: Snippet)
+signal save_button_pressed(snippet: Snippetter_Snippet)
 signal cancel_button_presssed
 
 @onready var _snippet_name_line_edit : LineEdit = $MarginContainer/VBoxContainer/LineEdit
@@ -12,7 +12,7 @@ var _is_edit : bool = false
 
 
 func _on_save_button_pressed() -> void:
-	var snippet = Snippet.new(_snippet_name_line_edit.text, _code_edit.text)
+	var snippet = Snippetter_Snippet.new(_snippet_name_line_edit.text, _code_edit.text)
 	save_button_pressed.emit(snippet)
 
 
@@ -27,7 +27,7 @@ func clear() -> void:
 	_snippet_name_line_edit.editable = true
 
 
-func populate(snippet: Snippet) -> void:
+func populate(snippet: Snippetter_Snippet) -> void:
 	_snippet_name_line_edit.text = snippet.get_name()
 	_code_edit.text = snippet.get_data()
 	_is_edit = false

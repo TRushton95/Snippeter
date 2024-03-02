@@ -1,2 +1,0 @@
-for my_var in my_collection:
-	pass

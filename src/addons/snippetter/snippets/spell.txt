@@ -1,8 +1,0 @@
-extends Spell
-
-func _on_enter(_my_unit: Unit) -> void:
-	pass
-
-
-func _on_exit(_my_unit: Unit) -> void:
-	pass
