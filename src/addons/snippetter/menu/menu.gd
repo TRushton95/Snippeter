@@ -48,6 +48,8 @@ func _on_editor_cancel_button_presssed() -> void:
 
 
 func _ready() -> void:
+	name = "Snippetter"
+	
 	for snippet in Disk.read_all_snippets() as Array[Snippet]:
 		add_listing(snippet.get_name())
 

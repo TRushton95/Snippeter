@@ -5,6 +5,7 @@ class_name QuickSelect
 @export var _option_scene : PackedScene
 
 @onready var _option_container : VBoxContainer = $VBoxContainer/PanelContainer/VBoxContainer
+@onready var _search_edit : LineEdit = $VBoxContainer/LineEdit
 
 var _snippets : Array[Snippet]
 
@@ -21,14 +22,16 @@ func _on_option_selected(snippet_name: String, snippet_data: String) -> void:
 
 
 func _ready() -> void:
-	refresh()
 	name = "Snippetter"
+	refresh()
 
 
 func refresh() -> void:
 	_clear()
 	_load_snippets()
-	_push_snippets(_snippets)
+	
+	var matching_snippets = _get_matching_snippets(_search_edit.text)
+	_push_snippets(matching_snippets)
 
 
 func _clear() -> void:
