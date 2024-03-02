@@ -6,7 +6,6 @@ var quick_select : QuickSelect
 
 
 func _on_snippetter_snippets_updated() -> void:
-	print("snippets updated, refreshing quick_select")
 	quick_select.refresh()
 
 

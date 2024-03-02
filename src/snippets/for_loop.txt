@@ -1,2 +1,0 @@
-for my_value in my_collection:
-	pass

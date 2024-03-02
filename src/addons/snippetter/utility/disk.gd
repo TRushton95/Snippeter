@@ -1,7 +1,7 @@
 extends Object
 class_name Disk
 
-const SNIPPETS_DIR =  "res://snippets/"
+const SNIPPETS_DIR =  "res://addons/snippetter/snippets/"
 const FILE_FORMAT = "%s.txt"
 const PATH_FORMAT = SNIPPETS_DIR + FILE_FORMAT
 
