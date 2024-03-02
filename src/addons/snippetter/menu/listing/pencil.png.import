@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ryh1sbgiiryt"
-path="res://.godot/imported/pencil.png-1d6026460a67c2768eabb7899fc111de.ctex"
+path="res://.godot/imported/pencil.png-53e9cbf14260ff093977ae32daf291f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/listing/pencil.png"
-dest_files=["res://.godot/imported/pencil.png-1d6026460a67c2768eabb7899fc111de.ctex"]
+source_file="res://addons/snippetter/menu/listing/pencil.png"
+dest_files=["res://.godot/imported/pencil.png-53e9cbf14260ff093977ae32daf291f2.ctex"]
 
 [params]
 

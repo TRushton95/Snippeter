@@ -1,2 +1,2 @@
-for my_var in my_collection:
+for my_value in my_collection:
 	pass

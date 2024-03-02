@@ -1,16 +1,14 @@
 @tool
 extends PanelContainer
+class_name Menu
+
+signal snippets_updated
 
 @export var listing_scene : PackedScene
 
 @onready var _listing_container : VBoxContainer = $MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
 @onready var _editor : Editor = $Editor
 @onready var _main_scene : Node = $MarginContainer
-
-
-func _ready() -> void:
-	for snippet in Disk.read_all_snippets() as Array[Snippet]:
-		add_listing(snippet.get_name())
 
 
 func _on_add_button_pressed() -> void:
@@ -35,16 +33,23 @@ func _on_listing_edit_button_pressed(snippet_name: String) -> void:
 func _on_listing_remove_button_pressed(snippet_name: String) -> void:
 	Disk.delete(snippet_name)
 	remove_listing(snippet_name)
+	snippets_updated.emit()
 
 
 func _on_editor_save_button_pressed(snippet: Snippet) -> void:
 	Disk.save_snippet(snippet.get_data(), snippet.get_name())
 	add_listing(snippet.get_name())
 	goto_main()
+	snippets_updated.emit()
 
 
 func _on_editor_cancel_button_presssed() -> void:
 	goto_main()
+
+
+func _ready() -> void:
+	for snippet in Disk.read_all_snippets() as Array[Snippet]:
+		add_listing(snippet.get_name())
 
 
 func add_listing(snippet_name: String) -> void:

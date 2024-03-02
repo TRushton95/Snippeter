@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://clbbaexklpmnw"]
 
-[ext_resource type="Script" path="res://quick_select/option/option.gd" id="1_bbfwb"]
+[ext_resource type="Script" path="res://addons/snippetter/quick_select/option/option.gd" id="1_bbfwb"]
 
 [node name="Option" type="PanelContainer"]
 anchors_preset = 15

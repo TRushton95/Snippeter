@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dl5c8rsrpb8eo"]
 
-[ext_resource type="Texture2D" uid="uid://wjsv7qaj7deh" path="res://menu/listing/bin.png" id="1_fsuy2"]
-[ext_resource type="Script" path="res://menu/listing/listing.gd" id="1_r2htv"]
-[ext_resource type="Texture2D" uid="uid://do35iqjk1ge6y" path="res://menu/listing/clipboard.png" id="2_i7cgq"]
-[ext_resource type="Texture2D" uid="uid://ryh1sbgiiryt" path="res://menu/listing/pencil.png" id="3_7s1qg"]
-[ext_resource type="Texture2D" uid="uid://uwfduxjef3fl" path="res://menu/listing/tick.png" id="5_yrwkl"]
+[ext_resource type="Texture2D" uid="uid://wjsv7qaj7deh" path="res://addons/snippetter/menu/listing/bin.png" id="1_fsuy2"]
+[ext_resource type="Script" path="res://addons/snippetter/menu/listing/listing.gd" id="1_r2htv"]
+[ext_resource type="Texture2D" uid="uid://do35iqjk1ge6y" path="res://addons/snippetter/menu/listing/clipboard.png" id="2_i7cgq"]
+[ext_resource type="Texture2D" uid="uid://ryh1sbgiiryt" path="res://addons/snippetter/menu/listing/pencil.png" id="3_7s1qg"]
+[ext_resource type="Texture2D" uid="uid://uwfduxjef3fl" path="res://addons/snippetter/menu/listing/tick.png" id="5_yrwkl"]
 
 [sub_resource type="Animation" id="Animation_1qsod"]
 resource_name = "copy"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ce4322hiu7l6k"]
 
-[ext_resource type="Script" path="res://menu/editor/editor.gd" id="1_qoo68"]
+[ext_resource type="Script" path="res://addons/snippetter/menu/editor/editor.gd" id="1_qoo68"]
 
 [node name="Editor" type="PanelContainer"]
 anchors_preset = 15

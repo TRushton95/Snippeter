@@ -1,8 +1,8 @@
 extends Spell
 
-func _on_enter(_my_unit: Unit) -> void:
+func _on_enter(_unit: Unit) -> void:
 	pass
 
 
-func _on_exit(_my_unit: Unit) -> void:
+func _on_exit(_unit: Unit) -> void:
 	pass
