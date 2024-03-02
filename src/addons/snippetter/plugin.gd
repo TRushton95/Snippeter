@@ -11,7 +11,7 @@ func _on_snippetter_snippets_updated() -> void:
 
 func _enter_tree() -> void:
 	menu = load("res://addons/snippetter/menu/menu.tscn").instantiate()
-	add_control_to_container(CustomControlContainer.CONTAINER_PROJECT_SETTING_TAB_LEFT, menu)
+	add_control_to_container(CustomControlContainer.CONTAINER_PROJECT_SETTING_TAB_RIGHT, menu)
 	
 	quick_select = load("res://addons/snippetter/quick_select/quick_select.tscn").instantiate()
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_UL, quick_select)
