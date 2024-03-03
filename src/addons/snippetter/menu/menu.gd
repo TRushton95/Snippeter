@@ -4,11 +4,16 @@ class_name Snippetter_Menu
 
 signal snippets_updated
 
+const DELETE_CONFIRMATION_TEXT_FORMAT : String = "Are you sure you want to delete %s?"
+
 @export var listing_scene : PackedScene
 
-@onready var _listing_container : VBoxContainer = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
+@onready var _delete_confirmation_dialog : ConfirmationDialog = $VBoxContainer/DeleteConfirmationDialog
 @onready var _editor : Snippetter_Editor = $Editor
+@onready var _listing_container : VBoxContainer = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
 @onready var _main_scene : Node = $VBoxContainer
+
+var _pending_snippet_deletion : String = ""
 
 
 func _on_add_button_pressed() -> void:
@@ -31,12 +36,20 @@ func _on_listing_edit_button_pressed(snippet_name: String) -> void:
 
 
 func _on_listing_remove_button_pressed(snippet_name: String) -> void:
-	Snippetter_Disk.delete(snippet_name)
-	remove_listing(snippet_name)
-	snippets_updated.emit()
+	_pending_snippet_deletion = snippet_name
+	_delete_confirmation_dialog.dialog_text = DELETE_CONFIRMATION_TEXT_FORMAT % snippet_name
+	_delete_confirmation_dialog.show()
+
+
+func _on_delete_confirmation_dialog_canceled() -> void:
+	_pending_snippet_deletion = ""
 
 
 func _on_editor_save_button_pressed(snippet: Snippetter_Snippet) -> void:
+	if !_editor.is_edit_mode() && Snippetter_Disk.snippet_exists(snippet.get_name()):
+		_editor.show_existing_name_dialog()
+		return
+	
 	Snippetter_Disk.save_snippet(snippet.get_data(), snippet.get_name())
 	add_listing(snippet.get_name())
 	_editor.hide()
@@ -45,6 +58,15 @@ func _on_editor_save_button_pressed(snippet: Snippetter_Snippet) -> void:
 
 func _on_editor_close_button_presssed() -> void:
 	_editor.hide()
+
+
+func _on_delete_confirmation_dialog_confirmed() -> void:
+	if _pending_snippet_deletion == "":
+		return
+	
+	Snippetter_Disk.delete(_pending_snippet_deletion)
+	remove_listing(_pending_snippet_deletion)
+	snippets_updated.emit()
 
 
 func _ready() -> void:

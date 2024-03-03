@@ -38,6 +38,11 @@ static func read_all_snippets() -> Array[Snippetter_Snippet]:
 	return result
 
 
+static func snippet_exists(name: String) -> bool:
+	var path = PATH_FORMAT % name
+	return FileAccess.file_exists(path)
+
+
 static func delete(snippet_name: String) -> void:
 	if !snippet_file_exists(snippet_name):
 		return

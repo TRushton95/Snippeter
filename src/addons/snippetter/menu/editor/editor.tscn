@@ -8,8 +8,10 @@
 
 [node name="Editor" type="PopupPanel"]
 title = "Create a Snippet"
+initial_position = 1
 size = Vector2i(800, 500)
-visible = true
+unresizable = false
+borderless = false
 min_size = Vector2i(600, 400)
 script = ExtResource("1_qoo68")
 
@@ -50,6 +52,17 @@ text = "Save"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Close"
+
+[node name="EmptyNameDialog" type="AcceptDialog" parent="."]
+title = "Empty Name"
+initial_position = 1
+dialog_text = "Please enter a name"
+
+[node name="ExistingNameDialog" type="AcceptDialog" parent="."]
+title = "Invalid Snippet Name"
+initial_position = 1
+size = Vector2i(498, 100)
+dialog_text = "That snippet name is already in use. Please use another name."
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

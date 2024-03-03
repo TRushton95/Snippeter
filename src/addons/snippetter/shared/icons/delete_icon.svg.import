@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v05gwxnljxu8"
-path="res://.godot/imported/tick_transparent.png-0862034829fb5cc74078fe02ea0d4c26.ctex"
+uid="uid://c7w0jqfwakop8"
+path="res://.godot/imported/delete_icon.svg-d564bbdf209bb6167fbe983e6c053ef7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/snippetter/quick_select/option/tick_transparent.png"
-dest_files=["res://.godot/imported/tick_transparent.png-0862034829fb5cc74078fe02ea0d4c26.ctex"]
+source_file="res://addons/snippetter/shared/icons/delete_icon.svg"
+dest_files=["res://.godot/imported/delete_icon.svg-d564bbdf209bb6167fbe983e6c053ef7.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

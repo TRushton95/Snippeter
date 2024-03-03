@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1mwi87wca16k"
-path="res://.godot/imported/copy_icon.svg-2857b6b8731747df30e00b6e140aa563.ctex"
+uid="uid://cf5twi7rn7w71"
+path="res://.godot/imported/edit_icon.svg-f35f46f1b37c0d40a185dc83cd88b63b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/snippetter/menu/listing/copy_icon.svg"
-dest_files=["res://.godot/imported/copy_icon.svg-2857b6b8731747df30e00b6e140aa563.ctex"]
+source_file="res://addons/snippetter/shared/icons/edit_icon.svg"
+dest_files=["res://.godot/imported/edit_icon.svg-f35f46f1b37c0d40a185dc83cd88b63b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uwfduxjef3fl"
-path="res://.godot/imported/tick.png-0ecf0cfddea3c4a573bb2d84520eca1c.ctex"
+uid="uid://cek2pak7yodfg"
+path="res://.godot/imported/spacer.16x16.png-9a09453c5a0da94f3a4d482065bf3e4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/snippetter/menu/listing/tick.png"
-dest_files=["res://.godot/imported/tick.png-0ecf0cfddea3c4a573bb2d84520eca1c.ctex"]
+source_file="res://addons/snippetter/shared/icons/spacer.16x16.png"
+dest_files=["res://.godot/imported/spacer.16x16.png-9a09453c5a0da94f3a4d482065bf3e4c.ctex"]
 
 [params]
 

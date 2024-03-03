@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7w0jqfwakop8"
-path="res://.godot/imported/delete_icon.svg-f2875627252d492b468c1f634312cd97.ctex"
+uid="uid://ckae87txtbe0e"
+path="res://.godot/imported/spacer.8x8.png-ccd26451b47d141ec47887627a1d8fb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/snippetter/menu/listing/delete_icon.svg"
-dest_files=["res://.godot/imported/delete_icon.svg-f2875627252d492b468c1f634312cd97.ctex"]
+source_file="res://addons/snippetter/shared/icons/spacer.8x8.png"
+dest_files=["res://.godot/imported/spacer.8x8.png-ccd26451b47d141ec47887627a1d8fb6.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

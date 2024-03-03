@@ -3,10 +3,12 @@ extends PanelContainer
 
 signal selected
 
+@onready var _anim_player : AnimationPlayer = $AnimationPlayer
 @onready var _button : Button = $Button
 
 
 func _on_button_pressed() -> void:
+	_anim_player.play("copy")
 	selected.emit()
 
 
