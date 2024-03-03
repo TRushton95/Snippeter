@@ -6,9 +6,9 @@ signal snippets_updated
 
 @export var listing_scene : PackedScene
 
-@onready var _listing_container : VBoxContainer = $MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
+@onready var _listing_container : VBoxContainer = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
 @onready var _editor : Snippetter_Editor = $Editor
-@onready var _main_scene : Node = $MarginContainer
+@onready var _main_scene : Node = $VBoxContainer
 
 
 func _on_add_button_pressed() -> void:

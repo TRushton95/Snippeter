@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba05d07go3oks"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m4j6l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xm4j"]
+bg_color = Color(0.172549, 0.196078, 0.239216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmojh"]
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aoqc8"]
+
+[node name="OperationButton" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m4j6l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xm4j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tmojh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aoqc8")
+icon_alignment = 1

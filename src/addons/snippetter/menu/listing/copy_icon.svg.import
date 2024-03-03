@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do35iqjk1ge6y"
-path="res://.godot/imported/clipboard.png-626ddc57e34618f4faba769a5185736f.ctex"
+uid="uid://d1mwi87wca16k"
+path="res://.godot/imported/copy_icon.svg-2857b6b8731747df30e00b6e140aa563.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/snippetter/menu/listing/clipboard.png"
-dest_files=["res://.godot/imported/clipboard.png-626ddc57e34618f4faba769a5185736f.ctex"]
+source_file="res://addons/snippetter/menu/listing/copy_icon.svg"
+dest_files=["res://.godot/imported/copy_icon.svg-2857b6b8731747df30e00b6e140aa563.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

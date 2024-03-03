@@ -18,3 +18,10 @@ config/icon="res://addons/icon.svg"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/snippetter/plugin.cfg")
+
+[input]
+
+ASD={
+"deadzone": 0.5,
+"events": []
+}

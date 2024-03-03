@@ -1,79 +1,78 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl5c8rsrpb8eo"]
+[gd_scene load_steps=11 format=3 uid="uid://dl5c8rsrpb8eo"]
 
-[ext_resource type="Texture2D" uid="uid://wjsv7qaj7deh" path="res://addons/snippetter/menu/listing/bin.png" id="1_fsuy2"]
 [ext_resource type="Script" path="res://addons/snippetter/menu/listing/listing.gd" id="1_r2htv"]
-[ext_resource type="Texture2D" uid="uid://do35iqjk1ge6y" path="res://addons/snippetter/menu/listing/clipboard.png" id="2_i7cgq"]
-[ext_resource type="Texture2D" uid="uid://ryh1sbgiiryt" path="res://addons/snippetter/menu/listing/pencil.png" id="3_7s1qg"]
-[ext_resource type="Texture2D" uid="uid://uwfduxjef3fl" path="res://addons/snippetter/menu/listing/tick.png" id="5_yrwkl"]
+[ext_resource type="PackedScene" uid="uid://ba05d07go3oks" path="res://addons/snippetter/menu/listing/operation_button.tscn" id="2_k47rx"]
+[ext_resource type="Texture2D" uid="uid://cpsky6rj5j0yu" path="res://addons/snippetter/menu/listing/spacer.png" id="3_d5qr8"]
+[ext_resource type="Texture2D" uid="uid://d1mwi87wca16k" path="res://addons/snippetter/menu/listing/copy_icon.svg" id="3_h4mgp"]
+[ext_resource type="Texture2D" uid="uid://cf5twi7rn7w71" path="res://addons/snippetter/menu/listing/edit_icon.svg" id="4_j13cu"]
+[ext_resource type="Texture2D" uid="uid://c7w0jqfwakop8" path="res://addons/snippetter/menu/listing/delete_icon.svg" id="5_ipsp7"]
+[ext_resource type="Texture2D" uid="uid://uwfduxjef3fl" path="res://addons/snippetter/menu/listing/tick.png" id="6_jpn8j"]
 
-[sub_resource type="Animation" id="Animation_1qsod"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2t6wa"]
+
+[sub_resource type="Animation" id="Animation_exedk"]
 resource_name = "copy"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HBoxContainer/CopyButton:icon")
+tracks/0/path = NodePath("HBoxContainer/HBoxContainer2/CopyButton:icon")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("5_yrwkl"), ExtResource("2_i7cgq")]
+"values": [ExtResource("6_jpn8j"), ExtResource("3_h4mgp")]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1k81p"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u461b"]
 _data = {
-"copy": SubResource("Animation_1qsod")
+"copy": SubResource("Animation_exedk")
 }
 
 [node name="Listing" type="PanelContainer"]
-custom_minimum_size = Vector2(0, 32)
-offset_right = 388.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(0, 16)
+offset_right = 256.0
+offset_bottom = 23.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2t6wa")
 script = ExtResource("1_r2htv")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 100
-
-[node name="Label" type="Label" parent="MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-text = "snippet_name"
-vertical_alignment = 1
-
-[node name="ListingCopyButton" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="ListingButton" parent="HBoxContainer" instance=ExtResource("2_k47rx")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "snippet_name"
+icon = ExtResource("3_d5qr8")
+alignment = 0
+icon_alignment = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 8
+theme_override_constants/separation = 0
 
-[node name="CopyButton" type="Button" parent="HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="CopyButton" parent="HBoxContainer/HBoxContainer2" instance=ExtResource("2_k47rx")]
 layout_mode = 2
-icon = ExtResource("2_i7cgq")
+icon = ExtResource("3_h4mgp")
 
-[node name="EditButton" type="Button" parent="HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="EditButton" parent="HBoxContainer/HBoxContainer2" instance=ExtResource("2_k47rx")]
 layout_mode = 2
-icon = ExtResource("3_7s1qg")
+icon = ExtResource("4_j13cu")
 
-[node name="DeleteButton" type="Button" parent="HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="DeleteButton" parent="HBoxContainer/HBoxContainer2" instance=ExtResource("2_k47rx")]
 layout_mode = 2
-icon = ExtResource("1_fsuy2")
+icon = ExtResource("5_ipsp7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_1k81p")
+"": SubResource("AnimationLibrary_u461b")
 }
 
-[connection signal="mouse_entered" from="ListingCopyButton" to="." method="_on_listing_copy_button_mouse_entered"]
-[connection signal="mouse_exited" from="ListingCopyButton" to="." method="_on_listing_copy_button_mouse_exited"]
-[connection signal="pressed" from="ListingCopyButton" to="." method="_on_listing_copy_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/CopyButton" to="." method="_on_copy_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/EditButton" to="." method="_on_edit_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ListingButton" to="." method="_on_listing_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer2/CopyButton" to="." method="_on_copy_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer2/EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer2/DeleteButton" to="." method="_on_delete_button_pressed"]
