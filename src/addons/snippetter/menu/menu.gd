@@ -8,9 +8,9 @@ const DELETE_CONFIRMATION_TEXT_FORMAT : String = "Are you sure you want to delet
 
 @export var listing_scene : PackedScene
 
-@onready var _delete_confirmation_dialog : ConfirmationDialog = $VBoxContainer/DeleteConfirmationDialog
+@onready var _delete_confirmation_dialog : ConfirmationDialog = $DeleteConfirmationDialog
 @onready var _editor : Snippetter_Editor = $Editor
-@onready var _listing_container : VBoxContainer = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
+@onready var _listing_container : VBoxContainer = $VBoxContainer/ScrollContainer/MarginContainer/ListingContainer
 @onready var _main_scene : Node = $VBoxContainer
 
 var _pending_snippet_deletion : String = ""

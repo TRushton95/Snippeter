@@ -12,7 +12,7 @@ bg_color = Color(0.188235, 0.215686, 0.262745, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ff6yf"]
 bg_color = Color(0.129412, 0.14902, 0.180392, 1)
 
-[node name="Snippetter" type="PanelContainer"]
+[node name="Menu" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,8 +21,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jwdbs")
 script = ExtResource("1_ii83g")
 listing_scene = ExtResource("2_vbrrw")
-
-[node name="Editor" parent="." instance=ExtResource("3_ptxoo")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -57,20 +55,22 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="ListingContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="DeleteConfirmationDialog" type="ConfirmationDialog" parent="VBoxContainer"]
+[node name="DeleteConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = "Confirm deletion"
 initial_position = 1
 ok_button_text = "Delete"
 
+[node name="Editor" parent="." instance=ExtResource("3_ptxoo")]
+
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="canceled" from="DeleteConfirmationDialog" to="." method="_on_delete_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="DeleteConfirmationDialog" to="." method="_on_delete_confirmation_dialog_confirmed"]
 [connection signal="close_button_presssed" from="Editor" to="." method="_on_editor_close_button_presssed"]
 [connection signal="save_button_pressed" from="Editor" to="." method="_on_editor_save_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
-[connection signal="canceled" from="VBoxContainer/DeleteConfirmationDialog" to="." method="_on_delete_confirmation_dialog_canceled"]
-[connection signal="confirmed" from="VBoxContainer/DeleteConfirmationDialog" to="." method="_on_delete_confirmation_dialog_confirmed"]
