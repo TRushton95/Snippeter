@@ -26,7 +26,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1ghkt")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_31i5d")
-placeholder_text = "Snippet name..."
+placeholder_text = "Snippet Name"
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
@@ -37,6 +37,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="CodeEdit" type="CodeEdit" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
+placeholder_text = "var my_var = \"example\""
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 25)
