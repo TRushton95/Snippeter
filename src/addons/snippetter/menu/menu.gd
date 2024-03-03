@@ -13,7 +13,7 @@ signal snippets_updated
 
 func _on_add_button_pressed() -> void:
 	_editor.clear()
-	goto_editor()
+	_editor.show()
 
 
 func _on_listing_copy_button_pressed(snippet_name: String) -> void:
@@ -27,7 +27,7 @@ func _on_listing_edit_button_pressed(snippet_name: String) -> void:
 	var snippet_content = Snippetter_Disk.read_snippet_data(snippet_name)
 	var snippet = Snippetter_Snippet.new(snippet_name, snippet_content)
 	_editor.populate(snippet)
-	goto_editor()
+	_editor.show()
 
 
 func _on_listing_remove_button_pressed(snippet_name: String) -> void:
@@ -39,12 +39,12 @@ func _on_listing_remove_button_pressed(snippet_name: String) -> void:
 func _on_editor_save_button_pressed(snippet: Snippetter_Snippet) -> void:
 	Snippetter_Disk.save_snippet(snippet.get_data(), snippet.get_name())
 	add_listing(snippet.get_name())
-	goto_main()
+	_editor.hide()
 	snippets_updated.emit()
 
 
-func _on_editor_cancel_button_presssed() -> void:
-	goto_main()
+func _on_editor_close_button_presssed() -> void:
+	_editor.hide()
 
 
 func _ready() -> void:
