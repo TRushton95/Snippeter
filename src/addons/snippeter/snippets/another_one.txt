@@ -1,0 +1,2 @@
+func another_one_func() -> void:
+	pass
