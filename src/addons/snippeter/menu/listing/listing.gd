@@ -1,6 +1,5 @@
 @tool
 extends PanelContainer
-class_name Snippeter_Listing
 
 signal copy_button_pressed(snippet_name: String)
 signal delete_button_pressed(snippet_name: String)

@@ -1,8 +1,8 @@
 @tool
 extends EditorPlugin
 
-var menu : Snippeter_Menu
-var quick_select : Snippeter_QuickSelect
+var menu : Control
+var quick_select : Control
 
 
 func _on_snippeter_snippets_updated() -> void:

@@ -1,19 +1,20 @@
 @tool
 extends PopupPanel
-class_name Snippeter_Editor
 
-signal save_button_pressed(snippet: Snippeter_Snippet)
+signal save_button_pressed(snippet: Snippet)
 signal close_button_presssed
 
 const CREATE_WINDOW_NAME : String = "Create a Snippet"
 const EDIT_WINDOW_NAME : String = "Edit a Snippet"
 
+const Snippet = preload("res://addons/snippeter/shared/snippet.gd")
+
+var _is_edit_mode : bool = false
+
 @onready var _code_edit : CodeEdit = $VBoxContainer/MarginContainer/CodeEdit
 @onready var _empty_name_dialog : AcceptDialog = $EmptyNameDialog
 @onready var _existing_name_dialog : AcceptDialog = $ExistingNameDialog
 @onready var _snippet_name_line_edit : LineEdit = $VBoxContainer/LineEdit
-
-var _is_edit_mode : bool = false
 
 
 func _on_save_button_pressed() -> void:
@@ -21,7 +22,7 @@ func _on_save_button_pressed() -> void:
 		_empty_name_dialog.show()
 		return
 	
-	var snippet = Snippeter_Snippet.new(_snippet_name_line_edit.text, _code_edit.text)
+	var snippet = Snippet.new(_snippet_name_line_edit.text, _code_edit.text)
 	save_button_pressed.emit(snippet)
 
 
@@ -35,7 +36,7 @@ func clear() -> void:
 	_set_edit_mode(false)
 
 
-func populate(snippet: Snippeter_Snippet) -> void:
+func populate(snippet: Snippet) -> void:
 	_snippet_name_line_edit.text = snippet.get_name()
 	_code_edit.text = snippet.get_data()
 	_set_edit_mode(true)

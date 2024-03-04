@@ -1,5 +1,4 @@
 extends Object
-class_name Snippeter_Snippet
 
 var _name: String
 var _data: String
